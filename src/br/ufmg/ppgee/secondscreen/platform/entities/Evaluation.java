@@ -11,6 +11,7 @@ public class Evaluation {
 	Long id;
 	Ref<User> user;
 	Ref<Program> program;
+	byte rating;
 
 	public Evaluation() {
 
