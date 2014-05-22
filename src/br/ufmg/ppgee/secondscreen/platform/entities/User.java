@@ -9,6 +9,15 @@ public class User {
 	@Id
 	Long id;
 	String username;
+	String password;
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
 
 	public User() {
 
