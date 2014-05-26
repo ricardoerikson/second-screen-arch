@@ -1,4 +1,4 @@
-package br.ufmg.ppgee.secondscreen.tasks.controller;
+package br.ufmg.ppgee.secondscreen.controller;
 
 import static br.ufmg.ppgee.secondscreen.platform.objectify.OfyService.ofy;
 
