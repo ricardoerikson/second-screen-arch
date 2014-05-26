@@ -1,5 +1,6 @@
 package br.ufmg.ppgee.secondscreen.platform.objectify;
 
+import br.ufmg.ppgee.secondscreen.platform.entities.Program;
 import br.ufmg.ppgee.secondscreen.platform.entities.User;
 
 import com.googlecode.objectify.Objectify;
@@ -10,6 +11,7 @@ public class OfyService {
 
 	static {
 		factory().register(User.class);
+		factory().register(Program.class);
 	}
 
 	public static Objectify ofy() {
