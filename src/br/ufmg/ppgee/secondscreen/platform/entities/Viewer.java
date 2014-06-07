@@ -4,7 +4,7 @@ import com.googlecode.objectify.annotation.Entity;
 import com.googlecode.objectify.annotation.Id;
 
 @Entity
-public class User {
+public class Viewer {
 
 	@Id
 	Long id;
@@ -19,7 +19,7 @@ public class User {
 		this.password = password;
 	}
 
-	public User() {
+	public Viewer() {
 
 	}
 

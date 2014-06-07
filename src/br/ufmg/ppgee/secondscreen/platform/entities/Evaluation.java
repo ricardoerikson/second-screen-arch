@@ -9,7 +9,7 @@ public class Evaluation {
 
 	@Id
 	Long id;
-	Ref<User> user;
+	Ref<Viewer> user;
 	Ref<Program> program;
 	byte rating;
 
@@ -25,11 +25,11 @@ public class Evaluation {
 		this.id = id;
 	}
 
-	public Ref<User> getUser() {
+	public Ref<Viewer> getUser() {
 		return user;
 	}
 
-	public void setUser(Ref<User> user) {
+	public void setUser(Ref<Viewer> user) {
 		this.user = user;
 	}
 
