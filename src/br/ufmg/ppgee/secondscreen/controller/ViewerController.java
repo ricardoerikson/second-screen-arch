@@ -36,9 +36,9 @@ public class ViewerController {
 	return viewer;
     }
 
-    @RequestMapping(value = "/{viewerId}/programs", method = RequestMethod.GET)
+    @RequestMapping(value = "/{viewerId}/evaluations", method = RequestMethod.GET)
     public String getEvaluatedPrograms(@PathVariable Long viewerId) {
-	return "forward:programs?viewer=" + String.valueOf(viewerId);
+	return "forward:evaluations/viewer/" + String.valueOf(viewerId);
     }
 
     @RequestMapping(value = "/json", method = RequestMethod.GET, headers = "Accept=application/json")
