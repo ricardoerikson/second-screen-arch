@@ -9,7 +9,7 @@
 <body>
 
 	<h1>Create a new Program</h1>
-	<form action="/program/new" method="post">
+	<form action="/programs" method="POST">
 		<label for="title">Program title</label> <input type="text"
 			name="title" /> <br> <label for="videoCode">YouTube
 			Code</label> <input type="text" name="videoCode" /> <br> <input
