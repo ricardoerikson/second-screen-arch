@@ -6,6 +6,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -16,22 +17,22 @@ import br.ufmg.ppgee.secondscreen.platform.entities.Viewer;
 @RequestMapping("/viewers")
 public class ViewerController {
 
-    @RequestMapping(value="/",method=RequestMethod.POST)
+    @RequestMapping(value = "/", method = RequestMethod.POST)
     public String createNewViewer(Viewer viewer) {
 	ofy().save().entity(viewer);
 	return "saved";
     }
 
-    @RequestMapping("/form")
-    public String getForm() {
-	return "user/userForm";
+    @RequestMapping(value = "/{viewerId}", method = RequestMethod.GET, headers = "Accept=application/json")
+    public @ResponseBody
+    Viewer getViewer(@PathVariable Long viewerId) {
+	Viewer viewer = ofy().load().type(Viewer.class).id(viewerId).now();
+	return viewer;
     }
 
-    @RequestMapping("/list")
-    public String listUsers(Model model) {
-	List<Viewer> list = ofy().load().type(Viewer.class).list();
-	model.addAttribute("users", list);
-	return "user/listusers";
+    @RequestMapping(value = "/{viewerId}/programs", method = RequestMethod.GET)
+    public String getEvaluatedPrograms(@PathVariable Long viewerId) {
+	return "forward:programs?user=" + String.valueOf(viewerId);
     }
 
     @RequestMapping(value = "/json", method = RequestMethod.GET, headers = "Accept=application/json")
