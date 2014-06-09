@@ -48,9 +48,4 @@ public class ViewerController {
 	return list;
     }
 
-    @RequestMapping("form")
-    public String form() {
-	return "user/userForm";
-    }
-
 }

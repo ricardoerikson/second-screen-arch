@@ -14,10 +14,12 @@ public class LoginInterceptor extends HandlerInterceptorAdapter {
 	HttpSession session = request.getSession();
 
 	String uri = request.getRequestURI();
-	if (uri.endsWith("login"))
+	if (uri.startsWith("/login"))
 	    return true;
 	if (session.getAttribute("username") != null)
 	    return true;
+
+	response.sendRedirect("/login/form");
 	return false;
     }
 

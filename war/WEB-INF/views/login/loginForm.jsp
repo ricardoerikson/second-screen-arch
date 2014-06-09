@@ -4,14 +4,15 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>Login Form</title>
 </head>
 <body>
-	<form action="/login/viewer/new" method="POST">
-		<label for="username">Username: </label> <input name="username"
-			type="text" /> <br> <label for="password">Password: </label> <input
-			name="password" type="password" /> <br> <input type="submit"
-			value="Criar usuário" />
+	<h1>Login form:</h1>
+	<form action="/login" method="POST">
+		<label for="username">username:</label> <input type="text"
+			name="username" /> <br> <label for="password">password</label>
+		<input type="password" name="password" /><br> <input
+			type="submit" value="Login" />
 	</form>
 
 </body>
